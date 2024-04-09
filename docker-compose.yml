@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  php-cli:
+    image: php:8.3-cli
+    volumes:
+      - .:/var/www/html
+    working_dir: /var/www/html
+    command: tail -f /dev/null
+    depends_on:
+      - composer
+
+  composer:
+    image: composer:latest
+    volumes:
+      - .:/var/www/html
+    working_dir: /var/www/html
+    command: tail -f /dev/null
