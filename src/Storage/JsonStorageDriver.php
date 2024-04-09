@@ -19,7 +19,7 @@ final readonly class JsonStorageDriver implements StorageDriverInterface
     public function fetchAll(): array
     {
         $jsonData = file_get_contents($this->filePath);
-        
+
         return json_decode($jsonData, true) ?? [];
     }
 }
